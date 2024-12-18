@@ -32,8 +32,8 @@ export default function App() {
               fontWeight: 'bold',
             },
             cardStyle: {
-              backgroundColor: '#f5f5f5'
-            }
+              backgroundColor: '#f5f5f5',
+            },
           }}
         >
           <Stack.Screen 
@@ -41,15 +41,15 @@ export default function App() {
             component={UserListScreen} 
             options={{ 
               title: 'User Directory',
-              headerTitleAlign: 'center'
+              headerTitleAlign: 'center',
             }}
           />
           <Stack.Screen 
             name="UserDetails" 
             component={UserDetailsScreen} 
             options={({ route }) => ({ 
-              title: route.params.user.name,
-              headerTitleAlign: 'center'
+              title: route.params?.user?.name || 'User Details',
+              headerTitleAlign: 'center',
             })}
           />
         </Stack.Navigator>
